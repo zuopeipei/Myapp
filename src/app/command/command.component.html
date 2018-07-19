@@ -1,0 +1,23 @@
+<button class="btn-danger" (click)="getlist()">click me!</button>
+<table class="table">
+  <thead>
+    <tr>
+      <td>命令</td>
+      <td>用户ID</td>
+      <td>命令名称</td>
+      <td>命令具体信息</td>
+    </tr>
+    <tr>
+      <td>{{cmd.cmdId}}</td>
+      <td>{{cmd.userId}}</td>
+      <td>{{cmd.cmdDesc}}</td>
+      <td>{{cmd.cmdInfo}}</td>
+    </tr>
+    <tr *ngFor="let cm of cmds">
+        <td>{{cm.cmdId}}</td>
+        <td>{{cm.userId}}</td>
+        <td>{{cm.cmdDesc}}</td>
+        <td>{{cm.cmdInfo}}</td>
+    </tr>
+  </thead>
+</table>
