@@ -1,10 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title}}
-  </h1>
-</div>
-<nav>
-    <a routerLink="/cmd">CMD SERVICE</a>
-</nav>
-<router-outlet></router-outlet>
+<!-- 顶部导航 -->
+<ul>
+  <li><a routerLink="/home">主页</a></li>
+  <li><a routerLink="/cmd">命令服务</a></li>
+  <li><a routerLink="/home">日志服务</a></li>
+  <li><a routerLink="/home">测试</a></li>
+</ul>
+
+<!-- 主体部分 -->
+<router-outlet class="main-container"></router-outlet>

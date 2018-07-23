@@ -1,23 +1,30 @@
-<button class="btn-danger" (click)="getlist()">click me!</button>
-<table class="table">
+<div class="input-group mb-lg-4">
+  <input type="text" class="form-control col-lg-3" placeholder="info" id="info" name="info">
+  <div class="col-lg-1 input-group-append">
+    <span class="input-group-text btn btn-success">SEARCH</span>
+  </div>
+</div>
+<table class="table table-bordered table-striped table-hover  text-center ">
   <thead>
-    <tr>
-      <td>命令</td>
-      <td>用户ID</td>
-      <td>命令名称</td>
-      <td>命令具体信息</td>
-    </tr>
-    <tr>
-      <td>{{cmd.cmdId}}</td>
-      <td>{{cmd.userId}}</td>
-      <td>{{cmd.cmdDesc}}</td>
-      <td>{{cmd.cmdInfo}}</td>
-    </tr>
-    <tr *ngFor="let cm of cmds">
-        <td>{{cm.cmdId}}</td>
-        <td>{{cm.userId}}</td>
-        <td>{{cm.cmdDesc}}</td>
-        <td>{{cm.cmdInfo}}</td>
+    <tr class="row">
+      <td class="col-2">命令</td>
+      <td class="col-2">用户ID</td>
+      <td class="col-2">命令名称</td>
+      <td class="col-4">命令具体信息</td>
+      <td class="col-2">操作</td>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngFor="let cm of cmds" class="row">
+        <td class="col-2">{{cm.cmdId}}</td>
+        <td class="col-2">{{cm.userId}}</td>
+        <td class="col-2">{{cm.cmdDesc}}</td>
+        <td class="col-4">{{cm.cmdInfo}}</td>
+        <td class="col-2 ">
+          <span class="offset-1 float-left btn btn-dark">修改</span>
+          <span class="offset-2 float-left btn btn-danger">删除</span>
+        </td>
+    </tr>
+  </tbody>
 </table>
+<button class="btn-danger" (click)="getlist()">click me!</button>
