@@ -1,7 +1,12 @@
 <div class="input-group mb-lg-4 margin-top1">
-  <input type="text" class="form-control col-lg-3" placeholder="info" id="info" name="info">
+  <input [(ngModel)]="searchInfo" type="text" class="form-control col-lg-3" placeholder="info" id="info" name="info">
   <div class="col-lg-1 input-group-append">
-    <span class="input-group-text btn btn-success">SEARCH</span>
+    <span (click)="getlist()" class="input-group-text btn btn-success">SEARCH</span>
+  </div>
+  <div class="container row col-lg-9">
+    <input [(ngModel)]="cmd.cmdDesc" class="form-control col-lg-3 offset-lg-1" placeholder="desc" id="cmdDesc" name="desc">
+    <input [(ngModel)]="cmd.cmdInfo" type="text" class="form-control col-lg-4 offset-lg-1" placeholder="info" id="cmdInfo" name="info">
+    <span (click)="submitCmd()" class="input-group-text btn btn-success offset-lg-1">SUBMIT</span>
   </div>
 </div>
 <table class="table table-bordered table-striped table-hover  text-center ">
@@ -21,8 +26,8 @@
         <td class="col-2">{{cm.cmdDesc}}</td>
         <td class="col-4">{{cm.cmdInfo}}</td>
         <td class="col-2 ">
-          <span class="offset-1 float-left btn btn-dark">修改</span>
-          <span class="offset-2 float-left btn btn-danger">删除</span>
+          <span (click)="updateSetcmd(cm)" class="offset-1 float-left btn btn-dark">修改</span>
+          <span (click)="deletecmd(cm)" class="offset-2 float-left btn btn-danger">删除</span>
         </td>
     </tr>
   </tbody>
